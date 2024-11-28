@@ -17,6 +17,7 @@ const Navbar = () => {
             <li><Link to="/" className={location.pathname === '/' ? 'active' : ''}>홈</Link></li>
             <li><Link to="/recommend" className={location.pathname === '/recommend' ? 'active' : ''}>번호추천</Link></li>
             <li><Link to="/history" className={location.pathname === '/history' ? 'active' : ''}>당첨이력</Link></li>
+            <li><Link to="/statistics" className={location.pathname === '/statistics' ? 'active' : ''}>당첨통계</Link></li>
           </ul>
         </div>
         <Link to="/" className="btn btn-ghost text-xl">AI 로또</Link>
@@ -26,6 +27,7 @@ const Navbar = () => {
           <li><Link to="/" className={location.pathname === '/' ? 'active' : ''}>홈</Link></li>
           <li><Link to="/recommend" className={location.pathname === '/recommend' ? 'active' : ''}>번호추천</Link></li>
           <li><Link to="/history" className={location.pathname === '/history' ? 'active' : ''}>당첨이력</Link></li>
+          <li><Link to="/statistics" className={location.pathname === '/statistics' ? 'active' : ''}>당첨통계</Link></li>
         </ul>
       </div>
       <div className="navbar-end">

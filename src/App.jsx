@@ -7,6 +7,7 @@ import Navbar from './components/Navbar';
 import Home from './pages/Home';
 import Recommend from './pages/Recommend';
 import History from './pages/History';
+import Statistics from './pages/Statistics';
 
 function App() {
   const [count, setCount] = useState(0)
@@ -42,6 +43,7 @@ function App() {
           } />
           <Route path="/recommend" element={<Recommend />} />
           <Route path="/history" element={<History />} />
+          <Route path="/statistics" element={<Statistics />} />
         </Routes>
       </div>
     </Router>
