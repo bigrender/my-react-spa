@@ -1,3 +1,33 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .lotto-ball {
+    @apply w-12 h-12 rounded-full flex items-center justify-center text-white font-bold text-xl;
+  }
+  
+  .lotto-ball-1-10 {
+    @apply bg-yellow-500;
+  }
+  
+  .lotto-ball-11-20 {
+    @apply bg-blue-500;
+  }
+  
+  .lotto-ball-21-30 {
+    @apply bg-red-500;
+  }
+  
+  .lotto-ball-31-40 {
+    @apply bg-gray-500;
+  }
+  
+  .lotto-ball-41-45 {
+    @apply bg-green-500;
+  }
+}
+
 :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
