@@ -56,7 +56,7 @@ const AuthModal = ({ isOpen, onClose, mode = 'login' }) => {
         )}
 
         <form onSubmit={handleSubmit} className="space-y-4">
-          <div>
+          <div className="mb-4">
             <label className="block text-sm font-medium text-gray-700 mb-1">
               이메일
             </label>
@@ -64,13 +64,14 @@ const AuthModal = ({ isOpen, onClose, mode = 'login' }) => {
               type="email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
-              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-luxury-600 focus:border-transparent"
+              className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-luxury-500 bg-white text-gray-900"
+              placeholder="example@email.com"
               required
             />
           </div>
 
           {currentMode === 'register' && (
-            <div>
+            <div className="mb-4">
               <label className="block text-sm font-medium text-gray-700 mb-1">
                 이름
               </label>
@@ -84,7 +85,7 @@ const AuthModal = ({ isOpen, onClose, mode = 'login' }) => {
             </div>
           )}
 
-          <div>
+          <div className="mb-6">
             <label className="block text-sm font-medium text-gray-700 mb-1">
               비밀번호
             </label>
@@ -92,7 +93,8 @@ const AuthModal = ({ isOpen, onClose, mode = 'login' }) => {
               type="password"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
-              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-luxury-600 focus:border-transparent"
+              className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-luxury-500 bg-white text-gray-900"
+              placeholder="••••••••"
               required
             />
           </div>
