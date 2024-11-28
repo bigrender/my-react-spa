@@ -43,14 +43,24 @@ const AuthModal = ({ isOpen, onClose, mode = 'login' }) => {
   if (!isOpen) return null;
 
   return (
-    <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
-      <div className="bg-white rounded-xl p-8 max-w-md w-full mx-4">
-        <h2 className="text-2xl font-bold mb-6 text-center">
-          {currentMode === 'login' ? '로그인' : '회원가입'}
-        </h2>
-        
+    <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4 z-50">
+      <div className="bg-white rounded-xl shadow-xl max-w-md w-full p-6">
+        <div className="flex justify-between items-center mb-6">
+          <h2 className="text-2xl font-bold text-gray-900">
+            {currentMode === 'login' ? '로그인' : '회원가입'}
+          </h2>
+          <button
+            onClick={onClose}
+            className="text-gray-500 hover:text-gray-700"
+          >
+            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" />
+            </svg>
+          </button>
+        </div>
+
         {error && (
-          <div className="bg-red-50 text-red-500 p-4 rounded-lg mb-4">
+          <div className="mb-4 p-3 bg-red-100 text-red-700 rounded-lg">
             {error}
           </div>
         )}
@@ -79,7 +89,8 @@ const AuthModal = ({ isOpen, onClose, mode = 'login' }) => {
                 type="text"
                 value={name}
                 onChange={(e) => setName(e.target.value)}
-                className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-luxury-600 focus:border-transparent"
+                className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-luxury-500 bg-white text-gray-900"
+                placeholder="홍길동"
                 required
               />
             </div>
@@ -99,33 +110,25 @@ const AuthModal = ({ isOpen, onClose, mode = 'login' }) => {
             />
           </div>
 
-          <button
-            type="submit"
-            className="w-full bg-luxury-600 text-white py-2 px-4 rounded-lg hover:bg-luxury-700 transition-colors"
-          >
-            {currentMode === 'login' ? '로그인' : '회원가입'}
-          </button>
+          <div className="flex flex-col gap-3">
+            <button
+              type="submit"
+              className="w-full px-4 py-2 bg-luxury-600 text-white rounded-lg hover:bg-luxury-700 transition-colors"
+            >
+              {currentMode === 'login' ? '로그인' : '회원가입'}
+            </button>
+            <button
+              type="button"
+              onClick={() => {
+                setCurrentMode(currentMode === 'login' ? 'register' : 'login');
+                setError('');
+              }}
+              className="w-full px-4 py-2 bg-white text-luxury-600 border border-luxury-600 rounded-lg hover:bg-luxury-50 transition-colors"
+            >
+              {currentMode === 'login' ? '회원가입하기' : '로그인하기'}
+            </button>
+          </div>
         </form>
-
-        <div className="mt-4 text-center">
-          <button
-            onClick={() => setCurrentMode(currentMode === 'login' ? 'register' : 'login')}
-            className="text-luxury-600 hover:text-luxury-700 text-sm"
-          >
-            {currentMode === 'login' 
-              ? '아직 회원이 아니신가요? 회원가입' 
-              : '이미 회원이신가요? 로그인'}
-          </button>
-        </div>
-
-        <button
-          onClick={onClose}
-          className="absolute top-4 right-4 text-gray-400 hover:text-gray-600"
-        >
-          <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" />
-          </svg>
-        </button>
       </div>
     </div>
   );
