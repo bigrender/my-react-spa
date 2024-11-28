@@ -3,8 +3,10 @@ import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Navbar from './components/Navbar';
 import Home from './pages/Home';
 import Recommend from './pages/Recommend';
+import History from './pages/History';
 
 function App() {
   const [count, setCount] = useState(0)
@@ -12,6 +14,7 @@ function App() {
   return (
     <Router>
       <div className="min-h-screen bg-base-100">
+        <Navbar />
         <Routes>
           <Route path="/" element={
             <>
@@ -38,6 +41,7 @@ function App() {
             </>
           } />
           <Route path="/recommend" element={<Recommend />} />
+          <Route path="/history" element={<History />} />
         </Routes>
       </div>
     </Router>
